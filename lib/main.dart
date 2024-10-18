@@ -1,19 +1,12 @@
+import 'package:clinics/core/routing/app_route.dart';
+import 'package:clinics/doc_app.dart';
 import 'package:flutter/material.dart';
 
 void main()
 {
-  runApp(MyApp());
+  runApp(DocApp(
+    appRoute: AppRoute(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Clinics',
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
 
