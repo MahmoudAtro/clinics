@@ -1,6 +1,6 @@
 import 'package:clinics/core/routing/routes.dart';
 import 'package:clinics/features/auth/ui/login_screen.dart';
-import 'package:clinics/features/onBoarding/onboarding_screen.dart';
+import 'package:clinics/features/onBoarding/ui/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {
