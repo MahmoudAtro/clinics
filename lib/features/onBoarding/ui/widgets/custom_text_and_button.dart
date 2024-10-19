@@ -1,3 +1,5 @@
+import 'package:clinics/core/helpers/extensions.dart';
+import 'package:clinics/core/routing/routes.dart';
 import 'package:clinics/core/theming/colors.dart';
 import 'package:clinics/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +23,16 @@ class CustomTextAndButton extends StatelessWidget {
             height: 30.h,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.loginScreen);
+            },
             child: Text(
               "Get Started",
               style: TextStyles.font16WhiteMedium,
             ),
             style: ButtonStyle(
-              backgroundColor: const WidgetStatePropertyAll(ColorsManager.mainBlue),
+              backgroundColor:
+                  const WidgetStatePropertyAll(ColorsManager.mainBlue),
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               minimumSize: const WidgetStatePropertyAll(
                 Size(double.infinity, 52),
