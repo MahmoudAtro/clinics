@@ -23,7 +23,7 @@ class CustomTextAndButton extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              "Get Strted",
+              "Get Started",
               style: TextStyles.font16WhiteMedium,
             ),
             style: ButtonStyle(
