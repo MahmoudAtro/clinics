@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 class AppRoute {
   Route generateRoute(RouteSettings route) {
+    // this argument to be passed in any screen like this
+    // final argument = route.arguments;
     switch (route.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
