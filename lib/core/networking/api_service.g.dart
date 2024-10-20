@@ -12,7 +12,6 @@ class _ApiService implements ApiService {
   _ApiService(
     this._dio, {
     this.baseUrl,
-    this.errorLogger,
   }) {
     baseUrl ??= 'https://vcare.integration25.com/api/';
   }
@@ -21,7 +20,37 @@ class _ApiService implements ApiService {
 
   String? baseUrl;
 
-  final ParseErrorLogger? errorLogger;
+  @override
+  Future<LoginResponse> login(LoginResponse loginRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = loginRequestBody;
+    final _options = _setStreamType<LoginResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'auth/login',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late LoginResponse _value;
+    try {
+      _value = LoginResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      rethrow;
+    }
+    return _value;
+  }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
