@@ -1,6 +1,9 @@
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/theming/styles.dart';
+import 'package:clinics/core/widgets/app_text_button.dart';
+import 'package:clinics/features/auth/ui/widgets/login/dont_have_account.dart';
 import 'package:clinics/features/auth/ui/widgets/login/email_and_password.dart';
+import 'package:clinics/features/auth/ui/widgets/login/terms_and_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,9 +30,29 @@ class LoginScreen extends StatelessWidget {
                   style: TextStyles.font14GrayRegular,
                 ),
                 verticalspace(36),
-                const Column(
+                Column(
                   children: [
-                    EmailAndPassword(),
+                    const EmailAndPassword(),
+                    verticalspace(24),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyles.font13BlueRegular,
+                      ),
+                    ),
+                    verticalspace(40),
+                    AppTextButton(
+                      buttonText: "Login",
+                      textStyle: TextStyles.font16WhiteSemiBold,
+                      onPressed: () {
+                        // validateThenDoLogin(context);
+                      },
+                    ),
+                    verticalspace(16),
+                    const TermsAndConditionsText(),
+                    verticalspace(60),
+                    const DontHaveAccountText(),
                   ],
                 )
               ],
