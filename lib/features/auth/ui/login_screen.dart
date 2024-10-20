@@ -1,6 +1,8 @@
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/theming/styles.dart';
 import 'package:clinics/core/widgets/app_text_button.dart';
+import 'package:clinics/features/auth/ui/widgets/login/custom_divider.dart';
+import 'package:clinics/features/auth/ui/widgets/login/custom_signin_with.dart';
 import 'package:clinics/features/auth/ui/widgets/login/dont_have_account.dart';
 import 'package:clinics/features/auth/ui/widgets/login/email_and_password.dart';
 import 'package:clinics/features/auth/ui/widgets/login/terms_and_condition.dart';
@@ -49,6 +51,10 @@ class LoginScreen extends StatelessWidget {
                         // validateThenDoLogin(context);
                       },
                     ),
+                    verticalspace(16),
+                    const CustomDivider(),
+                    verticalspace(16),
+                    const CustomSigninWith(),
                     verticalspace(16),
                     const TermsAndConditionsText(),
                     verticalspace(60),

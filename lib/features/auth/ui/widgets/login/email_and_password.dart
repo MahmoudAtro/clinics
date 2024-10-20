@@ -1,7 +1,6 @@
 import 'package:clinics/core/helpers/app_regex.dart';
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/widgets/app_text_form_feild.dart';
-import 'package:clinics/features/auth/ui/widgets/login/password_validation.dart';
 import 'package:flutter/material.dart';
 
 class EmailAndPassword extends StatefulWidget {
@@ -79,14 +78,14 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 }
               },
             ),
-            verticalspace(24),
-            PasswordValidations(
-              hasLowerCase: hasLowercase,
-              hasUpperCase: hasUppercase,
-              hasSpecialCharacters: hasSpecialCharacters,
-              hasNumber: hasNumber,
-              hasMinLength: hasMinLength,
-            ),
+            // verticalspace(24),
+            // PasswordValidations(
+            //   hasLowerCase: hasLowercase,
+            //   hasUpperCase: hasUppercase,
+            //   hasSpecialCharacters: hasSpecialCharacters,
+            //   hasNumber: hasNumber,
+            //   hasMinLength: hasMinLength,
+            // ),
           ],
         ));
   }
