@@ -2,8 +2,8 @@ import 'package:clinics/core/helpers/extensions.dart';
 import 'package:clinics/core/routing/routes.dart';
 import 'package:clinics/core/theming/colors.dart';
 import 'package:clinics/core/theming/styles.dart';
-import 'package:clinics/features/auth/logic/cubit/login_cubit.dart';
-import 'package:clinics/features/auth/logic/cubit/login_state.dart';
+import 'package:clinics/features/auth/logic/login_cubit/login_cubit.dart';
+import 'package:clinics/features/auth/logic/login_cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +32,6 @@ class LoginBlocListner extends StatelessWidget {
             context.pushNamed(Routes.homeScreen);
           },
           error: (error) {
-            context.pop();
             setupErrorState(context, error);
           },
         );

@@ -1,7 +1,7 @@
 import 'package:clinics/core/helpers/app_regex.dart';
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/widgets/app_text_form_feild.dart';
-import 'package:clinics/features/auth/logic/cubit/login_cubit.dart';
+import 'package:clinics/features/auth/logic/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,21 +25,22 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
-    setupPasswordControllerListener();
+    // listen from passwordController for check password validate 
+    // setupPasswordControllerListener();
   }
 
-  void setupPasswordControllerListener() {
-    passwordController.addListener(() {
-      setState(() {
-        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasSpecialCharacters =
-            AppRegex.hasSpecialCharacter(passwordController.text);
-        hasNumber = AppRegex.hasNumber(passwordController.text);
-        hasMinLength = AppRegex.hasMinLength(passwordController.text);
-      });
-    });
-  }
+  // void setupPasswordControllerListener() {
+  //   passwordController.addListener(() {
+  //     setState(() {
+  //       hasLowercase = AppRegex.hasLowerCase(passwordController.text);
+  //       hasUppercase = AppRegex.hasUpperCase(passwordController.text);
+  //       hasSpecialCharacters =
+  //           AppRegex.hasSpecialCharacter(passwordController.text);
+  //       hasNumber = AppRegex.hasNumber(passwordController.text);
+  //       hasMinLength = AppRegex.hasMinLength(passwordController.text);
+  //     });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 ),
               ),
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null ||
+                    value.isEmpty ||
+                    !AppRegex.hasNumber(value) ||
+                    !AppRegex.hasUpperCase(value)) {
                   return 'Please enter a valid password';
                 }
               },

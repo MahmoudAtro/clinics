@@ -1,6 +1,6 @@
 import 'package:clinics/core/di/dependency_injection.dart';
 import 'package:clinics/core/routing/routes.dart';
-import 'package:clinics/features/auth/logic/cubit/login_cubit.dart';
+import 'package:clinics/features/auth/logic/login_cubit/login_cubit.dart';
 import 'package:clinics/features/auth/ui/login_screen.dart';
 import 'package:clinics/features/home/ui/home_screen.dart';
 import 'package:clinics/features/onBoarding/ui/onboarding_screen.dart';

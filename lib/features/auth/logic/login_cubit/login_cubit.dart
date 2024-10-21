@@ -2,7 +2,7 @@ import 'package:clinics/features/auth/data/models/login_request_body.dart';
 import 'package:clinics/features/auth/data/repos/login_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:clinics/features/auth/logic/cubit/login_state.dart';
+import 'package:clinics/features/auth/logic/login_cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
