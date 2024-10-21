@@ -1,6 +1,8 @@
 import 'package:clinics/core/networking/api_constant.dart';
 import 'package:clinics/features/auth/data/models/login_request_body.dart';
 import 'package:clinics/features/auth/data/models/login_response.dart';
+import 'package:clinics/features/auth/data/models/signup_request_body.dart';
+import 'package:clinics/features/auth/data/models/signup_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
@@ -13,5 +15,10 @@ abstract class ApiService {
   @POST(ApiConstant.apiLogin)
   Future<LoginResponse> login(
     @Body() LoginRequestBody loginRequestBody,
+  );
+
+  @POST(ApiConstant.apiLogin)
+  Future<SignupResponse> signup(
+    @Body()  SignupRequestBody signupRequestBody,
   );
 }
