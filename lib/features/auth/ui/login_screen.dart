@@ -1,12 +1,14 @@
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/theming/styles.dart';
 import 'package:clinics/core/widgets/app_text_button.dart';
+import 'package:clinics/features/auth/logic/cubit/login_cubit.dart';
 import 'package:clinics/features/auth/ui/widgets/login/custom_divider.dart';
 import 'package:clinics/features/auth/ui/widgets/login/custom_signin_with.dart';
 import 'package:clinics/features/auth/ui/widgets/login/dont_have_account.dart';
 import 'package:clinics/features/auth/ui/widgets/login/email_and_password.dart';
 import 'package:clinics/features/auth/ui/widgets/login/terms_and_condition.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -67,5 +69,11 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().keyForm.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState();
+    }
   }
 }
