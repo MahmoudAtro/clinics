@@ -61,7 +61,6 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # For build generate code 
   build_runner: ^2.4.13
-  flutter_secure_storage: ^4.2.1
 
   
 
