@@ -1,7 +1,9 @@
 import 'package:clinics/core/helpers/app_regex.dart';
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/core/widgets/app_text_form_feild.dart';
+import 'package:clinics/features/auth/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
@@ -18,12 +20,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool hasSpecialCharacters = false;
   bool hasNumber = false;
   bool hasMinLength = false;
-  final _formkey = GlobalKey<FormState>();
   late TextEditingController passwordController;
   @override
   void initState() {
     super.initState();
-    passwordController = TextEditingController();
+    passwordController = context.read<LoginCubit>().passwordController;
     setupPasswordControllerListener();
   }
 
@@ -43,7 +44,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: _formkey,
+        key: context.read<LoginCubit>().keyForm,
         child: Column(
           children: [
             AppTextFormField(
@@ -55,11 +56,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                   return 'Please enter a valid email';
                 }
               },
-              // controller: context.read<LoginCubit>().emailController,
+              controller: context.read<LoginCubit>().emailController,
             ),
             verticalspace(18),
             AppTextFormField(
-              // controller: context.read<LoginCubit>().passwordController,
+              controller: context.read<LoginCubit>().passwordController,
               hintText: 'Password',
               isObscureText: isObscureText,
               suffixIcon: GestureDetector(
