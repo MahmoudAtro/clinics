@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "411315147602",
+    "project_id": "atrodoc",
+    "storage_bucket": "atrodoc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411315147602:android:1db4ac74a43bdfa3a0e08b",
+        "android_client_info": {
+          "package_name": "com.atrodoc.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf2JvjJTk_JfKbeF-LnR8xbDQkpx-kBX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
