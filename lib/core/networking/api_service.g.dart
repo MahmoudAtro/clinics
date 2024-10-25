@@ -72,7 +72,7 @@ class _ApiService implements ApiService {
           data: _data,
         )
         .copyWith(
-            baseUrl: _combineBaseUrls(
+          baseUrl: _combineBaseUrls(
           _dio.options.baseUrl,
           baseUrl,
         )));

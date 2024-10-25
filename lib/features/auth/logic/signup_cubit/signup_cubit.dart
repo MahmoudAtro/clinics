@@ -9,17 +9,21 @@ class SignupCubit extends Cubit<SignupState> {
   SignupCubit(this._signupRepo) : super(const SignupState.initial());
 
   TextEditingController emailController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordConfirmationController =
+      TextEditingController();
   final keyForm = GlobalKey<FormState>();
 
-  void emitLoginState() async {
+  void emitSignupStates() async {
     emit(const SignupState.loading());
     final response = await _signupRepo.signup(SignupRequestBody(
       email: emailController.text,
       password: passwordController.text,
-      phone: "001122",
-      name: "mahmoud",
-      passwordCofirmation: "ss",
+      phone: phoneController.text,
+      name: nameController.text,
+      passwordCofirmation: passwordConfirmationController.text,
       gender: 0,
     ));
 
