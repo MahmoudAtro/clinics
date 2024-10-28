@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:411315147602:android:1db4ac74a43bdfa3a0e08b",
         "android_client_info": {
-          "package_name": "com.atrodoc.app"
+          "package_name": "com.example.clinics"
         }
       },
       "oauth_client": [],

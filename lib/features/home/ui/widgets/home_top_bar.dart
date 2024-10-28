@@ -27,7 +27,7 @@ class HomeTopBar extends StatelessWidget {
         CircleAvatar(
           radius: 24,
           backgroundColor: ColorsManager.moreLightGray,
-          child: SvgPicture.asset("assets/svgs/notifications.svg"),
+          child: SvgPicture.asset("assets/svgs/notifications.svg", fit: BoxFit.cover,),
         )
       ],
     );

@@ -4,6 +4,7 @@ import 'package:clinics/features/auth/logic/login_cubit/login_cubit.dart';
 import 'package:clinics/features/auth/logic/signup_cubit/signup_cubit.dart';
 import 'package:clinics/features/auth/ui/login_screen.dart';
 import 'package:clinics/features/auth/ui/signup_screen.dart';
+import 'package:clinics/features/home/logic/home_cubit.dart';
 import 'package:clinics/features/home/ui/home_screen.dart';
 import 'package:clinics/features/onBoarding/ui/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,9 @@ class AppRoute {
 
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => BlocProvider(
+            create: (_) => HomeCubit(getit()..getHomeData()),
+            child: const HomeScreen()),
         );
       case Routes.signupScreen:
         return MaterialPageRoute(

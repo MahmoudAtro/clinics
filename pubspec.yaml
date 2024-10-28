@@ -53,6 +53,8 @@ dependencies:
   # Localization
   intl: ^0.19.0
   easy_localization: ^3.0.7
+  # To save Image from network to mobile cache
+  cached_network_image: ^3.4.1
   # For Splash screen
   flutter_native_splash: ^2.4.1
   # For add svg pricture
@@ -63,6 +65,7 @@ dependencies:
   build_runner: ^2.4.13
   # To setup firebase in my project
   firebase_core: ^3.6.0
+  
 
   
 
