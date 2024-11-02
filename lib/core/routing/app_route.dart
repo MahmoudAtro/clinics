@@ -30,7 +30,7 @@ class AppRoute {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => HomeCubit(getit()..getHomeData()),
+            create: (_) => HomeCubit(getit())..getHomeData(),
             child: const HomeScreen()),
         );
       case Routes.signupScreen:

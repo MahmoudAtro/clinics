@@ -13,7 +13,12 @@ class HomeState with _$HomeState {
 
   // specialization
   const factory HomeState.homeLoading() = HomeLoading;
-  const factory HomeState.homeSuccess(SpecializationsResponseModel specializationsResponseModel) = HomeSuccess;
+  const factory HomeState.homeSuccess(List<SpecializationsData?>? specializationDataList) = HomeSuccess;
   const factory HomeState.homeError({required ErrorHandler errorHandler}) = HomeError;
+
+  // Doctors Filter
+  const factory HomeState.doctorsFilterSuccess(List<Doctors?>? doctorsDataList) =
+  DoctorsFilterSuccess;
+  const factory HomeState.doctorsFilterError({required ErrorHandler errorHandler}) = DoctorsFilterError;
 
 }

@@ -1,10 +1,10 @@
 import 'package:clinics/core/helpers/spacehelper.dart';
 import 'package:clinics/features/home/ui/widgets/doctor_blue_container.dart';
 import 'package:clinics/features/home/ui/widgets/doctor_special_see.dart';
-import 'package:clinics/features/home/ui/widgets/home_bloc_listner.dart';
+import 'package:clinics/features/home/ui/widgets/doctors/doctors_bloc_builder.dart';
+import 'package:clinics/features/home/ui/widgets/specialization/special_bloc_listner.dart';
 import 'package:clinics/features/home/ui/widgets/home_top_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,10 +27,12 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DoctorBlueContainer(),
-              verticalspace(24.h),
+              verticalspace(24),
               const DoctorSpecialSee(),
               verticalspace(16),
-              const HomeBlocListner(),
+              const SpecialBlocListner(),
+              verticalspace(8),
+              const DoctorsBlocBuilder()
             ],
           ),
         ),

@@ -1,10 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clinics/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/helpers/spacehelper.dart';
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/helpers/spacehelper.dart';
+import '../../../../../core/theming/styles.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
   final Doctors? doctorModel;
@@ -16,23 +15,23 @@ class DoctorsListViewItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          CachedNetworkImage(
-              imageUrl:
-                  "https://r2.erweima.ai/imgcompressed/img/compressed_11c311bea4fccd5ae6b9e8091f4a9fa1.webp",
-              progressIndicatorBuilder: (context, url, progress) =>
-                  const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(
-                    Icons.error,
-                  )),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(24),
-          //   child: Image.network(
-          //     width: 110.w,
-          //     height: 120.h,
-          //     "https://r2.erweima.ai/imgcompressed/img/compressed_11c311bea4fccd5ae6b9e8091f4a9fa1.webp",
-          //     fit: BoxFit.cover,
-          //   ),
-          // ),
+          // CachedNetworkImage(
+          //     imageUrl:
+          //         "https://r2.erweima.ai/imgcompressed/img/compressed_11c311bea4fccd5ae6b9e8091f4a9fa1.webp",
+          //     progressIndicatorBuilder: (context, url, progress) =>
+          //         const CircularProgressIndicator(),
+          //     errorWidget: (context, url, error) => const Icon(
+          //           Icons.error,
+          //         )),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(24),
+            child: Image.network(
+              width: 110.w,
+              height: 120.h,
+              "https://r2.erweima.ai/imgcompressed/img/compressed_11c311bea4fccd5ae6b9e8091f4a9fa1.webp",
+              fit: BoxFit.cover,
+            ),
+          ),
           horizontalspace(16),
           Expanded(
               child: Column(

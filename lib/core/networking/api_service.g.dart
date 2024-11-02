@@ -49,6 +49,8 @@ class _ApiService implements ApiService {
     try {
       _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
+      print(s);
+      print(e);
       rethrow;
     }
     return _value;
@@ -82,6 +84,8 @@ class _ApiService implements ApiService {
     try {
       _value = SignupResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
+      print(s);
+      print(e);
       rethrow;
     }
     return _value;
